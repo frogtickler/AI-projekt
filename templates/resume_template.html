@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if template == 'modern' %}
+    <style>
+        body { font-family: Helvetica, sans-serif; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; }
+        h1 { text-align: center; color: #2b6cb0; }
+        .section { margin-bottom: 15px; }
+    </style>
+    {% else %}
+    <style>
+        body { font-family: Times New Roman, serif; }
+        h1 { text-align: center; }
+        .section { margin-bottom: 15px; }
+    </style>
+    {% endif %}
+    <title>Resume</title>
+</head>
+<body>
+    {% if template == 'modern' %}
+    <div class="container">
+        <h1>{{ name }}</h1>
+        <div class="section"><strong>Email:</strong> {{ email }}</div>
+        <div class="section"><strong>Phone:</strong> {{ phone }}</div>
+        <div class="section"><strong>Profile</strong><br>{{ profile }}</div>
+        <div class="section"><strong>Experience</strong><br>{{ experience }}</div>
+        <div class="section"><strong>Education</strong><br>{{ education }}</div>
+        <div class="section"><strong>Skills</strong><br>{{ skills }}</div>
+        <div class="section"><strong>Languages</strong><br>{{ languages }}</div>
+    </div>
+    {% else %}
+    <h1>{{ name }}</h1>
+    <div class="section"><strong>Email:</strong> {{ email }}</div>
+    <div class="section"><strong>Phone:</strong> {{ phone }}</div>
+    <div class="section"><strong>Profile</strong><br>{{ profile }}</div>
+    <div class="section"><strong>Experience</strong><br>{{ experience }}</div>
+    <div class="section"><strong>Education</strong><br>{{ education }}</div>
+    <div class="section"><strong>Skills</strong><br>{{ skills }}</div>
+    <div class="section"><strong>Languages</strong><br>{{ languages }}</div>
+    {% endif %}
+</body>
+</html>
